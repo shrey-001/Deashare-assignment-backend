@@ -16,11 +16,11 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter @NoArgsConstructor
-@RedisHash("Product")
+//@RedisHash("Product")
 public class Product implements Serializable {
   
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
   private Integer id;
   private String name;
   private String description;

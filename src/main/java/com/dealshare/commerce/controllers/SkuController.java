@@ -1,6 +1,7 @@
 package com.dealshare.commerce.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,6 +25,7 @@ public class SkuController {
     }
 
     @GetMapping("/id")
+    @Cacheable(key = "#sku_id", value = "Sku")
     public @ResponseBody Sku getSkuById(@RequestParam Integer sku_id){
         return skuService.getSkuById(sku_id);
     }

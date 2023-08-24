@@ -14,10 +14,10 @@ import lombok.Setter;
 
 @Entity
 @Getter @Setter @NoArgsConstructor
-@RedisHash("Category")
+//@RedisHash("Category")
 public class Category implements Serializable{
   @Id
-  @GeneratedValue(strategy=GenerationType.AUTO)
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
   private Integer id;
   private String name;
 }
